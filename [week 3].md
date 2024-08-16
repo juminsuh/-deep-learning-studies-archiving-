@@ -10,7 +10,7 @@
 
 - for문을 사용하지 않고 각 음식에 포함된 탄수화물/단백질/지방의 비율을 계산하기
 
-![Untitled](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/05d17bbd-4130-43cf-9356-c88412c77162)
 
 1️⃣ **··· 네 가지 음식에 포함된 칼로리의 합(cal)**
 
@@ -28,7 +28,7 @@ print(percentage)
 
 ✅ **General Principle**
 
-![IMG_5086.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5086.jpeg)
+![IMG_5086](https://github.com/user-attachments/assets/9f7a26ad-19a3-4a4e-8ee4-0ec26034aed3)
 
 ## 02. 파이썬과 넘파이 벡터
 
@@ -60,9 +60,9 @@ print(np.dot(a,a.T)) #(5,5) 행렬
 
 ---
 
-![IMG_5087.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5087.jpeg)
+![IMG_5087](https://github.com/user-attachments/assets/c6b8a5ac-b5f3-4c95-8acf-5eb5567bb4c3)
 
-![IMG_5088.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5088.jpeg)
+![IMG_5088](https://github.com/user-attachments/assets/d9c887de-60d4-40eb-a78d-f42beafe30ce)
 
 P(y=1|x)←x가 주어졌을 때 y가 1일 확률
 
@@ -74,13 +74,13 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
 
 ---
 
-![IMG_5089.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5089.jpeg)
+![IMG_5089](https://github.com/user-attachments/assets/4cee808d-3f4e-4d35-a0a4-76b2bfccbd1a)
 
 ## 05. 신경망 네트워크의 구성 알아보기
 
 ---
 
-![Untitled](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/4dd5aef1-43c9-4a4b-815f-915db920201e)
 
 - input layer($a^{[0]}$=$X$)-hidden layer($a^{[1]}$)-output layer$(a^{[2]}=\hat{y}$)
 - 은닉층은 입력층과 출력층 사이의 모든 층을 의미하며, 은닉층에 있는 값은 알 수 없음
@@ -102,7 +102,7 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
     
     ➡️ 만약 for문을 통해 이 연산을 해당 층의 모든 노드에 대해 한다면 상당히 비효율적일 것→**벡터화 필요!** 
     
-    ![IMG_5091.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5091.jpeg)
+    ![IMG_5091](https://github.com/user-attachments/assets/7f1d81a7-dfc1-415b-a16b-570137c4788c)
     
     이 네 개의 방정식만으로 연산 가능!
     
@@ -116,7 +116,7 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
     - $i: i$번째 훈련 데이터
 - 만약 m개의 데이터셋에 대해 네 개의 연산을 반복하고 싶다면, 모든 z와 a에 첨자 $[i]$를 붙이고 for i in range(1,m+1)문을 돌려야 함→**벡터화 해야 함!**
 
-![IMG_5094.jpeg](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/IMG_5094.jpeg)
+![IMG_5094](https://github.com/user-attachments/assets/74a19cba-6707-4bfc-ae1b-7dbec8e49c7e)
 
 *행의 개수는 층의 노드의 개수(z.shape=(#node, 1))이고 열의 개수는 데이터셋의 개수(i=1…m)이다.*
 
@@ -124,7 +124,7 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
 
 ## Quiz
 
-![Untitled](3%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20aa22bfed386f4475964cb4f7c0f89477/Untitled%202.png)
+![Untitled 2](https://github.com/user-attachments/assets/02983851-1f09-4d41-84a5-48ddaab06ac0)
 
 axis=0은 열(세로) 방향으로 더하라는 의미, axis=1은 행(가로) 방향으로 더하라는 의미다. 따라서 B.shape는 (4,)이고 C.shape는 keepdims=True이므로 2차원 배열을 유지하기 때문에 (1,3)이다. 
 
