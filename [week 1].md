@@ -33,7 +33,7 @@
 | Image, Radar Info | Position of other cars | Autonomous driving | Custom/Hybrid |
 - NN examples
 
-![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20cc2043dd15ef4903823fcb8943c51182/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/6f7fab58-63fd-4722-93d8-c0a80c434db3)
 
 - Type of Data : 구조적 및 비구조적 데이터를 신경망에 사용하여 예측 가능
     
@@ -59,7 +59,7 @@
     
     ✅ algorithms: 알고리즘의 개선
     
-    ![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20cc2043dd15ef4903823fcb8943c51182/Untitled%201.png)
+    ![Untitled 1](https://github.com/user-attachments/assets/c223ec93-ffdd-465d-826f-8e46c4c78d8e)
     
     <aside>
     💡 sigmoid는 오른쪽, 왼쪽 끝으로 가면 미분값이 0이 되기 때문에 gradient가 vanishing하는 문제가 발생하는데, ReLU 함수를 사용해서 문제를 해결할 수 있음→경사 하강법 알고리즘이 훨씬 빨라짐!
@@ -105,7 +105,7 @@ $$
 - 선형 회귀 시 y^=w^T*X+b를 통해 계산하지만, 해당 값은 0과 1 범위를 벗어나기 때문에 sigmoid 함수를 통해 해당 값을 0과 1 사이의 값으로 변환시켜줌→w^T로 변환시키는 이유는 열을 행으로 만들어서 계산하기 편리하게 하려고
 - 따라서 로지스틱 회귀를 이용해 **y^=*σ*(w*^T*X*+*b*)** 로 구하게 됨 (**σ*(z)=1/1+e^-z, z=w^T*X+b)
 
-![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20cc2043dd15ef4903823fcb8943c51182/Untitled%202.png)
+![Untitled 2](https://github.com/user-attachments/assets/cd9a750a-5b21-4cbe-8d7e-383dce255b6c)
 
 ### 3. 로지스틱 회귀의 비용함수
 
@@ -179,7 +179,7 @@ $$
 
 - 기울기 혹은 도함수는 함수에 따라 달라질 수 있음
 
-![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20cc2043dd15ef4903823fcb8943c51182/Untitled%203.png)
+![Untitled 3](https://github.com/user-attachments/assets/14614cb0-326e-43e6-89b3-f5dd68f7fc80)
 
 - **추가로 알게 된 것**
     
