@@ -13,7 +13,7 @@
 2. $v=a+u$
 3. $J=3v$
 
-![Untitled](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/ad2cb633-bd4a-4c07-ad32-b98792bd23c3)
 
 ## 02. 계산 그래프로 미분하기
 
@@ -59,7 +59,7 @@ $$
 
 ---
 
-![Untitled](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/f61515fe-7378-4753-a145-cd0eb9c7d15a)
 
 $$
 da=\frac{dL(a,y)}{da}=-\frac{y}{a}+\frac{1-y}{1-a}
@@ -94,7 +94,7 @@ $$
 
 - **코드**
 
-![IMG_5078.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5078.jpeg)
+![IMG_5078](https://github.com/user-attachments/assets/a56872ac-1879-47ca-911d-f53a03be4e24)
 
 Details
 
@@ -112,7 +112,7 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
 
 - 벡터화의 예시
 
-![IMG_5085.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5085.jpeg)
+![IMG_5085](https://github.com/user-attachments/assets/61507690-5e8f-4d68-8ba3-b36860f0c9a4)
 
 - SIMD(Single Instruction Multiple Data): 병렬 프로세서의 한 종류로, 하나의 명령어로 여러 개의 값을 동시에 계산하는 방식. 이는 벡터화 연산을 가능하게 함. CPU와 GPU를 이용한 계산에 모두 적용할 수 있음.
 
@@ -130,7 +130,7 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
     - np.zeros(m,n) # (m,n) 짜리 0 행
 - 로지스틱 회귀에는 두 개의 for문이 존재(m개의 훈련 데이터셋 학습/n개의 특징 업데이트)→아래 코드는 n개의 특징을 업데이트하는 for문을 벡터화로 대체한 예
 
-![IMG_5080.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5080.jpeg)
+![IMG_5080](https://github.com/user-attachments/assets/6ed459a3-f95b-4201-a263-2b43b633c908)
 
 ## 07. 로지스틱 회귀의 벡터
 
@@ -143,7 +143,7 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
         
         ---
         
-        ![IMG_5077.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5077.jpeg)
+        ![IMG_5077](https://github.com/user-attachments/assets/eccb91f2-aab8-44e9-9d26-1d1003181251)
         
         ✅ $np.dot(np.transpose(w), x)$는 (1,m)크기의 행렬과 상수 b를 더해 오류가 날 것 같지만, 파이썬이 자동적으로 상수 b를 (1,m) 크기의 행렬로 **브로드캐스팅** 해주기 때문에 오류가 발생하지 않음
         
@@ -153,9 +153,9 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
 
 - 벡터화를 통해 m개의 샘플에 대한 경사 계산을 동시에 하는 방법
 
-![IMG_5083.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5083.jpeg)
+![IMG_5083](https://github.com/user-attachments/assets/a38e3820-ce61-4d9a-bdb6-b854c01d995d)
 
-![IMG_5084.jpeg](2%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20d0d906cb6a6049e584f684c9086256fc/IMG_5084.jpeg)
+![IMG_5084](https://github.com/user-attachments/assets/d68ea90c-918c-48c2-8f0b-4c50bee54c8d)
 
 그러나 경사 하강을 여러 번 한다면, 이때는 어쩔 수 없이 for문을 써야 함
 
