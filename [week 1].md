@@ -165,7 +165,7 @@ $$
 
 - 만약 **dw>0**이면, 파라미터 w는 기존의 w보다 **작은** 방향으로 업데이트 될 것이고 만약 **dw<0**이면 파라미터 w는 기존의 w보다 **큰** 방향으로 업데이트 될 것 ➡️ global optima에 도달해야 함
 
-![IMG_5069.jpeg](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20cc2043dd15ef4903823fcb8943c51182/IMG_5069.jpeg)
+![IMG_5069](https://github.com/user-attachments/assets/ca6202ba-23eb-456c-ae0c-b448477290d9)
 
 ### 5. 미분
 
