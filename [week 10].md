@@ -14,7 +14,7 @@
     
     ⇒ mini batch 사용: mini batch 사이즈가 1,000개라면 5,000개의 mini batch가  있는 것 
     
-    ![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled.png)
+    <img width="773" alt="Untitled" src="https://github.com/user-attachments/assets/9e66c359-9084-4735-9d66-80d526af77c7">
     
     ```
     for t = 1, 2, ... 5000 # len(X) / self.batch_size 번 반복
@@ -39,9 +39,11 @@
 - 배치 경사 하강법에서는 비용 함수 J가 계속 감소한다.
 - 미니 배치 경사 하강법에서는 매 반복마다 다른 훈련 세트에서 훈련되기 때문에 전체적으로 비용 함수 J는 감소하나 약간의 노이즈가 발생한다. 예를 들어 X^{1}, Y^{1}은 훈련하기 쉬운 미니배치여서 비용이 약간 낮은데, X^{2}, Y^{2}이 훈련하기 어려운 미니배치라면 비용이 높아질 수 있다. 그러나 전체적으로 비용 함수 J는 감소한다.
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/52c51188-3e63-4ac3-b9c2-7f93a6aebe24)
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%202.png)
+
+![Untitled 2](https://github.com/user-attachments/assets/6b202dbc-cda6-4749-b50e-8ca582aa4582)
+
 
 - 미니 배치 사이즈 고르기 (hyperparameter): 속도를 빠르게 하기 위한 최적의 미니 배치 사이즈를 찾아내야 한다.
     - if mini batch size = m: 배치 경사 하강법 → 전체 훈련 데이터를 모두 훈련시키기 때문에, too long time per iteration (blue)
@@ -50,7 +52,7 @@
         - 여러 개의 vectorization을 얻기 때문에 빠르다.
         - 전체를 여러 개의 batch으로 나눔, 전체 훈련 세트가 진행되기를 기다리지 않고 진행할 수 있다.
         
-        ![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%203.png)
+        <img width="639" alt="Untitled 3" src="https://github.com/user-attachments/assets/607b5f48-b6c3-4ef5-9e28-f958f5f6c5d7">
         
     - how to choose the size of mini batch?
         
@@ -89,17 +91,18 @@
     
     → 데이터가 많지 않기 때문에 온도 변화에 더욱 민감하게 반응한다. 
     
-    ![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%204.png)
+    <img width="578" alt="Untitled 4" src="https://github.com/user-attachments/assets/a29216da-bbcc-408f-9dc3-d15ecbc204ce">
     
 
 ## 지수 가중 이동 평균 이해하기
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%205.png)
+![Untitled 5](https://github.com/user-attachments/assets/b6f14e81-bc06-41c8-b13a-3c7065f701f4)
+
 
 - 과거의 $\theta$일수록 현재의 경향 $v_{t}$를 표현하는 데 더 적은 영향을 끼치고 있다. $\beta$가 0과 1 사이의 파라미터이기 때문이다.
 - 위의 그래프는 $\theta$의 그래프, 아래의 그래프는 $\theta$의 계수 (0.1, 0.1 * 0.9….) 에 대한 그래프로, 지수적으로 감소하는 형태이다. $v_{t}$는 두 그래프를 element-wise하게 곱함으로써 구할 수 있다.
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%206.png)
+<img width="479" alt="Untitled 6" src="https://github.com/user-attachments/assets/3b2f11fb-065f-48fa-b655-6ea277588cf2">
 
 - 얼마의 기간에 걸쳐 구한 평균인가?
     - $(1-\varepsilon)^{\frac{1}{\varepsilon}}$ = $\frac{1}{e}$
@@ -123,7 +126,7 @@ repeat{
 
 - bias correction
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/c4754d79-704a-46dd-9364-0ed4fe2fcbb0.png)
+![c4754d79-704a-46dd-9364-0ed4fe2fcbb0](https://github.com/user-attachments/assets/9e8f5873-0c5e-4018-8cd2-3b0cd2c9149b)
 
 - 만약 지수 가중 이동 평균의 식대로만 $v_{t}$를 구하면 (왼쪽 식) 실제로 그려지는 곡선은 보라색 곡선이 된다. 그러나 보라색 곡선에는 너무 낮은 값(편향)이 존재한다 → 편향을 제거해야 한다!
 - 오른쪽 식처럼 $\theta$들의 가중 평균 $v_{t}$를 $1-\beta^t$로 나눠주면 $\theta$들의 가중 평균에서 편향이 제거된 초록색 그래프가 그려지고, 실제 값과 비슷하게 된다.
@@ -134,7 +137,8 @@ repeat{
 
 - 미니 배치 경사 하강법을 시행하면 다음과 같이 진동하며 최적점에 수렴한다. 그러나 이 방법은 경사 하강법의 속도를 느리게 하고 더 큰 learning rate를 사용하는 것을 막는다(오버슈팅 이슈). 또한 수직축에서는 진동을 막고 수평축에서는 왼쪽에서 오른쪽으로 학습이 빠르게 이루어지기를 원한다.
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%207.png)
+![Untitled 7](https://github.com/user-attachments/assets/f2e0d157-2c5a-4366-8ebe-04aa30321102)
+
 
 - momentum 경사 하강법은 일반적인 경사 하강법보다 빠르게 작동한다.
     - 경사에 대한 지수 가중 평균 (VdW, Vdb)을 계산하고, 그 값으로 가중치를 업데이트한다.
@@ -155,7 +159,8 @@ repeat{
 
 → 이 알고리즘을 통해 진동을 줄여 훨씬 부드럽게 최적점에 수렴할 수 있게 된다. 수직축에서는 진동을 줄이면서도 수평축에서는 속도를 빠르게 한다.  이전 단계의 업데이트 방향을 일부 기억함(관성)으로써 매개변수 업데이트 시 이전 단계의 기울기를 일정 부분 반영함으로써 알고리즘의 수렴을 가속화하고 진동을 줄여준다. 베타가 클수록 이전 단계 경로의 방향성을 강하게 유지시키므로 진동의 폭이 좁아지게 된다. 
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%208.png)
+![Untitled 8](https://github.com/user-attachments/assets/2438c5ed-c444-4dd2-8e62-c893228777e4)
+
 
 → 또한, 밥그릇 모양에서 공을 굴려 최적점으로 보낼 때, $\beta$는 1보다 작은 값이므로 friction, VdW, Vdb는 공의 velocity, dW, db는 공의 momentum(acceleration)의 역할을 한다고 이해할 수 있다. 
 
@@ -184,7 +189,8 @@ repeat{
     - 수평 방향(W)에서의 기울기는 완만해 미분값 SdW의 값은 상대적으로 작다. 따라서 수평 방향(W)은 기존의 learning rate보다 빠르게 업데이트되고, 이는 더 빠르게 수렴하도록 한다. 반면 수직 방향(b)에서의 기울기가 훨씬 가파르기 때문에 미분값 Sdb가 상대적으로 7크다. 따라서 수직 방향(b)으로는 기존의 learning rate보다 느리게 업데이트되고, 이는 진동을 줄인다.
     - 이 알고리즘을 사용하면 진동을 줄이면서도 빠르게 최적점으로 수렴할 수 있다.
     
-    ![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%209.png)
+    ![Untitled 9](https://github.com/user-attachments/assets/16f8d2a0-ddd2-457d-af24-67863161da74)
+
     
     - 주의할 점: W, b 업데이트 식에서 SdW, Sdb의 값이 너무 작지 않도록 한다(폭발할 수 있음) → SdW, Sdb에 $\varepsilon$ = 10^(-8)을 더함으로써 보완 가능
 
@@ -244,11 +250,13 @@ Iteration t:
     - 안장점 주위는 대부분 경사가 0이므로 지역 최적값에 갇힐 위험이 있다 → 그러나 big neural network를 사용하면 괜찮다.
     - 지역 최적값에 빠지면 대부분 경사가 0에 가깝기 때문에 학습이 느려질 수 있다. 또한, 다른 방향으로의 전환이 없다면 안장 지대에서 벗어나기 힘들다 → Adam, RMSProp과 같은 최적화 알고리즘을 통해 빠져나올 수 있다.
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%2010.png)
+![Untitled 10](https://github.com/user-attachments/assets/2147a6c6-9e8c-4160-856b-081dfdeef60f)
+
 
 ## Quiz
 
-![Untitled](10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20011a94c3723944dfa9d1009f864c523b/Untitled%2011.png)
+![Untitled 11](https://github.com/user-attachments/assets/fdc9a857-8e4c-43c9-8073-87d95ced7d61)
+
 
 - 만약 미니배치의 크기가 1이라면, 미니배치 내의 훈련 샘플들 간의 벡터화의 장점을 상실한다.
 - 만약 미니배치의 크기가 m이라면, 한 번의 진전을 이루기 전에 (한 번의 epoch이 끝나기 전에) 모든 훈련 샘플들을 처리해야 하는 배치 경사 하강법으로 빠지게 된다. → 한 번의 epoch마다 너무 오래 시간이 걸린다)
