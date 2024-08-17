@@ -13,9 +13,9 @@
 - $ReLU$의 단점: z가 음수일 때 도함수가 0이다. 그러나 은닉 노드의 z는 0보다 크기 때문에 실제로는 잘 동작한다. 예를 들어 집값 예측에서, $\hat{y}$는 가격으로 항상 양수이기 때문에 $ReLU$가 잘 동작한다.
 - $leaky ReLU$: z가 음수할 때 도함수가 0이 아니게 되도록 해준다. 밑의 그래프를 자세히 보면 z<0일 때 계수가 0.01이기 때문에 그래프가 살짝 꺾이는 것을 볼 수 있다. 실제로는 많이 쓰이지 않지만 쓰인다면 $ReLU$보다 좋은 결과를 보여준다. 실제로 $leaky ReLU$에서 0.01 말고 다른 값을 쓰면 기능이 급격하게 저하될 수 있다.
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/5422192f-4410-4830-927b-bd765ed6d24c)
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/388b1334-18b3-4d4c-b5b4-02d911e958b2)
 
 *x축은 z, y축은 a=g(z), g는 활성화 함수*
 
@@ -31,20 +31,19 @@
 
 ---
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%202.png)
+![Untitled 2](https://github.com/user-attachments/assets/df46369b-f37f-46b7-8553-4cbbc3887c17)
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%203.png)
+![Untitled 3](https://github.com/user-attachments/assets/0d17c361-bab2-42a2-b6a7-4a23c51ed59e)
 
 - 시그모이드에서, $a=g(z)$이기 때문에 $a$의 값을 안다면 쉽게 $g'(z)$를 구할 수 있다는 이점이 있다. $(\because g’(z)=a(1-a))$
 - $tanh$에서, $a=g(z)$이기 때문에 $a$의 값을 안다면 쉽게 $g'(z)$를 구할 수 있다는 이점이 있다. $(\because g'(z)=1-a^{2})$
 
 ## 신경망 네트워크와 경사 하강법
-
-![IMG_5105.jpeg](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/IMG_5105.jpeg)
+![IMG_5105](https://github.com/user-attachments/assets/e7a22e77-f3a3-4e2b-92ad-aa543dad32c9)
 
 ---
 
-![IMG_5099.jpeg](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/IMG_5099.jpeg)
+![IMG_5099](https://github.com/user-attachments/assets/9e2b80c3-5e66-4c14-9589-6baac1e70fad)
 
 ## 역전파에 대한 이해
 
@@ -52,7 +51,7 @@
 
 - 로지스틱 회귀의 역전파를 구하면 다음과 같다.
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%204.png)
+![Untitled 4](https://github.com/user-attachments/assets/545e0b18-c0ce-43dd-9aa1-36c7b416d41b)
 
 - $*n^{[0]}, n^{[1]}, n^{[2]}$…는 각 층 별 노드의 개수, m은 $X=[x^{(1)}, x^{(2)}…x^{(m)}]$로, 훈련 데이터 x의 개수*
 - 벡터화를 하면 shape가 (#node, m)이다.
@@ -81,7 +80,7 @@ np.random.rand()-0~1사이의 수 하나를 랜덤으로 반환
 
 </aside>
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%205.png)
+![Untitled 5](https://github.com/user-attachments/assets/82e0132d-c802-4606-82bf-df14b42b84c9)
 
 ```python
 w^{[1]}=np.random.randn((2,2))*0.01 #(2,2) 행렬
@@ -96,7 +95,7 @@ b_{[2]}=np.zeros((1,1))
 
 ## QUIZ
 
-![Untitled](4%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%201295638951a843ddbf04a0605d7dab5b/Untitled%206.png)
+![Untitled 6](https://github.com/user-attachments/assets/f26a2fcf-e3f9-4c89-9f9f-80824d635441)
 
 - break symmetry: 모든 은닉층의 가중치를 동일하게 초기화했을 때, 각 은닉층의 모든 노드가 동일한 함수를 계산하고 동일한 활성값을 출력해 동일한 방식으로 업데이트되는 대칭성 문제를 해결하는 것이다.
 - 대칭성이 발생한 경우 학습이 효과적으로 이루어지지 않기 때문에 은닉층의 가중치를 무작위로 초기화해 각 노드가 서로 다른 초기 가중치를 갖도록 해야 한다.
