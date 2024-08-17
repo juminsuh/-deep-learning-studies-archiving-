@@ -21,7 +21,7 @@
         $$
         
 
-![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/6d548331-6c43-4a4e-bff5-c598fbd9518d)
 
        original data                                   1. substract mean                                2. normalize variance          
 
@@ -31,7 +31,7 @@
     - 예를 들어 x1 : 1~1000이고 x2 : 0~1이라면 비용 함수가 왼쪽과 같은 그래프와 같이 가늘고 길쭉한 모양으로 그려질 것이다. 또한 gradient descent를 할 때 learning rate가 작아야 하기 때문에 학습에 오랜 시간이 걸릴 수 있다.
     - 그러나 오른쪽과 같이 특징들이 비슷한 크기를 갖도록 정규화를 거치면 비용 함수가 둥글고, 대칭적, 최적화하기 쉽게 그려진다. 이로 인해 학습 알고리즘이 빨리 실행된다.
     
-    ![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled%201.png)
+    <img width="692" alt="Untitled 1" src="https://github.com/user-attachments/assets/572f0568-92d3-47be-9c47-6f3344129ce8">
     
 - 만약 특징들의 크기가 비슷하다면 정규화를 하지 않아도 괜찮지만, 일반적으로 정규화는 학습에 아무런 해도 끼치지  않기 때문에 하는 것을 추천한다.
 
@@ -40,7 +40,7 @@
 - 정규화를 통해 활성화 값의 scale을 줄이고, 이에 따라 파라미터의 크기도 비슷해지기 때문에(정규화) 경사폭발과 같은 문제를 완화할 수 있다는 점에서, 정규화와 경사 폭발과 관련이 있다.
 - 매우 깊은 신경망을 학습시킬 때 발생할 때 미분값(활성화 값)이 매우 작아지거나 커지는 문제이다.
 
-![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled%202.png)
+<img width="749" alt="Untitled 2" src="https://github.com/user-attachments/assets/cdddc06d-b92b-4892-81af-2849e189469c">
 
 - 네트워크의 깊이를 L이라고 가정한다. 활성화 함수 g가 g(z) = z (선형 함수)라고 가정한다. $b^{[l]} = 0$이라고 가정한다.
 - $\hat{y} =a^{[L]}= w^{[l]}w^{[l-1]}…w^{[2]}w^{[1]}x$이 된다.
@@ -53,7 +53,7 @@
 - 가중치 행렬이 1보다 너무 크거나 작지 않도록 설정해서, 경사폭발과 경사소실이 일어나지 않도록 해야 한다.
 - 가중치 초기화 방법 → 가중치의 분산을 같게 만든다.
 
-![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled%203.png)
+<img width="790" alt="Untitled 3" src="https://github.com/user-attachments/assets/ea8634b1-2087-4505-b5a7-fc8b275a7bd1">
 
 - n이 입력 특성의 개수일 때, z가 너무 크지 않도록 해야 하므로 n이 커질수록 $w_{i}$의 값이 작아져야 한다.
 - 초기 가중치 행렬 $w_{i}$에 대한 분산 : $Var(w_{i})= \frac{1}{n}$
@@ -67,7 +67,7 @@
     
     → 경사의 계산을 수치적으로 구해야 한다. 
     
-    ![IMG_5286.jpeg](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/IMG_5286.jpeg)
+    ![IMG_5286](https://github.com/user-attachments/assets/2f064528-cb6d-44c7-9709-af726ef503a9)
     
     - $f(\theta) = \theta^3$이라고 하고, 그 도함수를 $g(\theta)$라고 한다. $\varepsilon$은 매우 작은 수이다.
     - $\theta$와 $\theta+\varepsilon$의 기울기를 구하는 전향 차분 근사보다, $\theta+\varepsilon$과 $\theta-\varepsilon$의 기울기를 구하는 중앙 차분 근사가 $\theta$에서의 $f(\theta)$의 기울기, $g(\theta)$에 더 잘 근사한다.
@@ -85,7 +85,7 @@
     
 - Gradient Checking (Grad check) - 근사적인 미분값과 실제 미분값이 같은지 확인한다.
     
-    ![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled%204.png)
+    <img width="820" alt="Untitled 4" src="https://github.com/user-attachments/assets/56f53ea8-b9a0-4d9c-bb58-240daa9dc88a">
     
     - $J(\theta) = J(\theta_1, \theta_2,...\theta_i...\theta_n)$이다. i에 대해 반복문을 돌린다.
     - $d\theta_{approxi}[i]$를 중앙 차분 근사를 사용해 구한다. 이때  $\theta_i$에만 $\varepsilon$을 더하고 빼준다.
@@ -109,7 +109,7 @@
 
 ## Quiz
 
-![Untitled](9%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%207fce633be2224b7ca35a1c399f6c2178/Untitled%205.png)
+![Untitled 5](https://github.com/user-attachments/assets/4681c402-effd-45a2-9f02-a83730f23e18)
 
 - 경사 검사는 시간이 너무 오래 걸리기 때문에 ‘학습 시’에는 사용되지 않고 디버깅 때만 사용된다.
 - 파라미터 주변값 $(\theta-\varepsilon, \theta+\varepsilon)$을 활용해 기울기를 추정한다(중앙 차분 근사).
