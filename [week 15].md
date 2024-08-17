@@ -18,17 +18,17 @@
 
 - 첫 번째로 하는 일은, 이미지에서 세로 선(vertical edges)들을 찾는다.
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/06712178-6c5f-4b7b-b6e3-b42e65d70b60)
 
 **⇒ how?**
 
-![원본 이미지(왼쪽)와 3x3 filter을 합성곱을 해 새로운 이미지(우측)을 만듦. 
-ex) 마지막 노란 박스: 1x1 + 7x0 +8x(-1) + 6x1 + 2x0 + 8x(-1) + 2x1 + 3x0 +9x(-1) = -16](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/4ca37a34-9fd2-429f-8f88-047489b2410d)
 
 원본 이미지(왼쪽)와 3x3 filter을 합성곱을 해 새로운 이미지(우측)을 만듦. 
 ex) 마지막 노란 박스: 1x1 + 7x0 +8x(-1) + 6x1 + 2x0 + 8x(-1) + 2x1 + 3x0 +9x(-1) = -16
 
-![원본 이미지(왼쪽)에 흰색(10)과 회색(0) 사이에 세로 경계선이 있음. 세로 경계선 검출 필터를 사용해 합성곱 신경망을 거친 이미지(오른쪽)에 그 경계선이 흰색(30)으로 표현됨. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%202.png)
+![Untitled 2](https://github.com/user-attachments/assets/3113e223-8472-4457-b67d-9359ea3e6c37)
+
 
 원본 이미지(왼쪽)에 흰색(10)과 회색(0) 사이에 세로 경계선이 있음. 세로 경계선 검출 필터를 사용해 합성곱 신경망을 거친 이미지(오른쪽)에 그 경계선이 흰색(30)으로 표현됨. 
 
@@ -40,7 +40,8 @@ ex) 마지막 노란 박스: 1x1 + 7x0 +8x(-1) + 6x1 + 2x0 + 8x(-1) + 2x1 + 3x0 
 
 - Vertical and Horizontal Edge Detection
     
-    ![Vertical filter의 왼쪽은 밝고 오른쪽은 어둡다. Horizontal filter의 위쪽은 밝고 아래쪽은 어둡다. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%203.png)
+    ![Untitled 3](https://github.com/user-attachments/assets/bb83c8aa-2d42-4181-9a36-e5f0d7a65fb6)
+
     
     Vertical filter의 왼쪽은 밝고 오른쪽은 어둡다. Horizontal filter의 위쪽은 밝고 아래쪽은 어둡다. 
     
@@ -48,11 +49,12 @@ ex) 마지막 노란 박스: 1x1 + 7x0 +8x(-1) + 6x1 + 2x0 + 8x(-1) + 2x1 + 3x0 
 - 역사적으로 CV 분야에서 어떤 조합의 숫자 필터를 사용하느냐에 관한 논쟁이 있었다.
     - sobel: 장점은 (가로로/세로로)중간 부분의 픽셀에 더 중점을 둬 더 선명해 보인다는 것이다.
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%204.png)
+![Untitled 4](https://github.com/user-attachments/assets/a674416c-6cc6-4fb4-8a47-d6c48e1784b7)
 
 ⇒ 딥러닝의 발전으로 필터의 숫자를 수동으로 고를 필요가 없어졌다. 9개의 숫자를 변수로 두고 backpropagation을 통해 스스로 필터의 숫자를 학습해 문제에 적합한 필터를 만들도록 한다. 이는 세로, 가로의 경계선뿐 아니라 기울어진 경계선을 학습할 수도 있다. 
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%205.png)
+![Untitled 5](https://github.com/user-attachments/assets/ad139b4a-49d7-4ecc-8b89-850959107d5e)
+
 
 ## Padding
 
@@ -71,7 +73,8 @@ $$
 (n+2p-f+1)*(n+2p-f+1)
 $$
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%206.png)
+![Untitled 6](https://github.com/user-attachments/assets/86b224a1-ae04-4906-86b2-07ba5dbe56ab)
+
 
 ⇒ 패딩을 사용하면 이미지의 크기를 유지할 수 있고, 가장자리의 정보를 덜 쓰는 일을 막을 수 있다. 
 
@@ -84,14 +87,15 @@ $$
             1. 필터의 크기가 짝수라면 패딩이 비대칭이 된다. f가 홀수일 때만 왼쪽과 오른쪽을 동일한 크기로 패딩을 더해줄 수 있다. 
             2. 홀수 크기의 필터에서는 필터에 중심이 존재한다. 
             
-            ![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%207.png)
+            ![Untitled 7](https://github.com/user-attachments/assets/f02054f2-ae44-4490-8106-7cce0fb80aa3)
+
             
 
 ## Stride
 
 - stride: 필터의 이동 보폭
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%208.png)
+![Untitled 8](https://github.com/user-attachments/assets/a1c30db2-82a5-4846-99db-ce9040164388)
 
 - 최종 이미지 크기: 소수점이라면 내림을 한다.(floor 함수) → 일반적으로 필터의 크기에 패딩과 스트라이드의 크기를 조절해 값이 정수로 나오도록 한다.
     
@@ -110,13 +114,14 @@ $$
 - 이에 따라 필터도 입체형으로 변하며 차원이 하나 증가한다. 이미지의 채널 수와 필터의 채널 수는 같아야 한다.
 - 그러나 결과는 하나의 이미지로, 2차원이다.
 
-![각 채널별로 합을 구하고, 그 합을 합쳐서 결과 이미지의 한 칸의 값을 구함. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%209.png)
+![Untitled 9](https://github.com/user-attachments/assets/a9c4e849-cc91-4d98-8b51-eb2400cfde46)
+
 
 각 채널별로 합을 구하고, 그 합을 합쳐서 결과 이미지의 한 칸의 값을 구함. 
 
 - Multiple Filters
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2010.png)
+![Untitled 10](https://github.com/user-attachments/assets/0ec511e6-67ac-43c0-ab41-632a315a19f3)
 
 패딩=0 & 스트라이드=1이라고 가정했을 때, 최종 이미지의 크기는 다음과 같다. 
 
@@ -130,11 +135,12 @@ $$
 
 - 각 필터를 사용해 나온 결과에 실수의 편향을 더해준 뒤 ReLU로 비선형성을 적용해준다. ⇒ 결과를 쌓아주면 합성곱 신경망의 한 층이 된다.
 
-![입력 이미지 = a^[0], 필터들 = w[1], 1차 결과 이미지 + b = z^[1], ReLU(z^[1]) = a^[1]](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2011.png)
+![Untitled 11](https://github.com/user-attachments/assets/1dc67782-24ff-4098-b9fb-213780cfc1f0)
+
 
 입력 이미지 = a^[0], 필터들 = w[1], 1차 결과 이미지 + b = z^[1], ReLU(z^[1]) = a^[1]
 
-![한 계층의 합성곱 신경망 생성](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2012.png)
+![Untitled 12](https://github.com/user-attachments/assets/0d0cb52e-9e46-484d-b14c-a44287cb607b)
 
 한 계층의 합성곱 신경망 생성
 
@@ -142,13 +148,14 @@ $$
 - Summary of notation
     - 단순 신경망을 사용하는 것보다 합성곱 신경망을 사용하면 필요한 파라미터의 수를 줄일 수 있다.
 
-![$n_c^{[l-1]}$: l-1층에서의 채널 수, $n_c^{[l]}$: l층에서의 채널 수(l-1층에서의 사용된 서로 다른 필터 수)](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2013.png)
+![Untitled 13](https://github.com/user-attachments/assets/e3599467-ff2a-4d06-b372-345ff9765091)
+
 
 $n_c^{[l-1]}$: l-1층에서의 채널 수, $n_c^{[l]}$: l층에서의 채널 수(l-1층에서의 사용된 서로 다른 필터 수)
 
 ## 간단한 합성곱 네트워크 예시
 
-![이때 f(필터 크기), s(스트라이드), p(패딩 크기)는 모두 하이퍼파라미터이다. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2014.png)
+<img width="790" alt="Untitled 14" src="https://github.com/user-attachments/assets/1ca3bbb2-15ce-481b-a071-e029e8167e65">
 
 이때 f(필터 크기), s(스트라이드), p(패딩 크기)는 모두 하이퍼파라미터이다. 
 
@@ -166,22 +173,25 @@ $n_c^{[l-1]}$: l-1층에서의 채널 수, $n_c^{[l]}$: l층에서의 채널 수
     - 필터 크기 = 2, 스트라이드 = 2, 패딩 크기 = 0이고 출력 계산 과정에서 (n+2p-f/2)+1 공식을 사용할 수 있다.
     - 학습하는 파라미터가 없다. → convolutional layer에서 필터들이 적절한 파라미터 값을 찾아야 하는 것과 다르게 max pooling은 채널에서 최대 값을 뽑기만 하면 된다.
 
-![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2015.png)
+![Untitled 15](https://github.com/user-attachments/assets/ccc300fb-c4db-4f5c-98ab-381d0402ab0e)
 
-![채널의 수가 늘어나도 각 채널에 개별적으로 똑같이 적용하면 된다. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2016.png)
+
+![Untitled 16](https://github.com/user-attachments/assets/d9c304fe-ec2a-4032-a509-bab8e0581d35)
+
 
 채널의 수가 늘어나도 각 채널에 개별적으로 똑같이 적용하면 된다. 
 
 - Average Pooling
     
-    ![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2017.png)
+    ![Untitled 17](https://github.com/user-attachments/assets/1087490e-0146-4bf7-9f53-90a6873d8db2)
+
     
 
 ## CNN(Convolutional Neural Network)
 
 - Neural Network Example ( LeNet-5)
 
-![pooling layer에는 파라미터(변수)가 없다. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2018.png)
+<img width="777" alt="Untitled 18" src="https://github.com/user-attachments/assets/011af496-14d0-40a3-83e4-279d2d0bad15">
 
 pooling layer에는 파라미터(변수)가 없다. 
 
@@ -192,7 +202,8 @@ pooling layer에는 파라미터(변수)가 없다.
         1. 예를 들어, 32x32x3 이미지를 5x5 필터 6개를 통해 28x28x6의 이미지로 합성곱 연산을 했을 경우, 필요한 변수의 개수는 5x5x3x6+6 = 456개이다. 그러나 만약 일반 신경망을 사용했다면 (32x32x3)x(28x28x6) = 약 14만 개의 변수가 필요할 것이다. 
         2. Parameter sharing(변수 공유): 이미지의 한 부분에 유용한 필터가 다른 부분에도 유용한 경우 
         
-        ![9개의 변수를 이용해 16개의 값을 계산한다. ](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2019.png)
+        ![Untitled 19](https://github.com/user-attachments/assets/c2b1beaa-3bf7-4717-859c-55f8f5438081)
+
         
         9개의 변수를 이용해 16개의 값을 계산한다. 
         
@@ -203,4 +214,4 @@ pooling layer에는 파라미터(변수)가 없다.
 - Putting it together
     - m: 훈련 세트 데이터 개수
     
-    ![Untitled](15%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20a00ff5d6aaa74a329ef6dd907ee32a1d/Untitled%2020.png)
+    ![Untitled 20](https://github.com/user-attachments/assets/e401592b-8192-4f00-b7a8-ec01d19c9d14)
