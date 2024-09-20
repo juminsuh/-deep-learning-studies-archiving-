@@ -16,7 +16,7 @@
     
     <img width="773" alt="Untitled" src="https://github.com/user-attachments/assets/9e66c359-9084-4735-9d66-80d526af77c7">
     
-    '''
+    ```
     for t = 1, 2, ... 5000 # len(X) / self.batch_size 번 반복
     
     	forward propagation of $X^{t}$ # 벡터화된 X
@@ -29,6 +29,7 @@
     	
     	backpropagation to compute gradient of J^{{t}}
     	W^{[L]}:= W^{[L]} - \alpha dW^{[L]}, b^{[L]}:= b^{[L]} - \alpha db^{[L]}
+	  ```
     
     
 
