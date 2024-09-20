@@ -75,7 +75,7 @@
     
 - 역방향 전파 for layer $l$
     - input $da^{[l]}, z^{[l]}$
-    - 역방향 전파의 계산에서 전방향 전파 때 저장해두었던 캐시$(z^{[l]}, W^{[l]}, b^{[l]})$를 사용한다.
+    - 역방향 전파의 계산에서 전방향 전파 때 저장해두었던 캐시 $(z^{[l]}, W^{[l]}, b^{[l]})$를 사용한다.
     
     ![Untitled 5](https://github.com/user-attachments/assets/023db69d-11cf-46b9-8973-900b4ff84e71)
     
