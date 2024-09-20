@@ -13,13 +13,6 @@
 
 **Data 비율**
 
----
-
-**train set**
-
-**dev set**
-
-**test set**
 
 - ML에서 데이터셋은 3개의 종류로 나뉜다→ train/dev/test
 - train set는 모델을 훈련하고 dev set로 그 모델의 성능을 검증하고 개선한다. 최종적으로 완성된 모델을 test set을 이용해 그 성능을 평가한다.
@@ -64,28 +57,30 @@
 
 - 높은 분산으로 overfitting의 문제가 있다면, 가장 먼저 고려해야 할 해결책은 정규화(regularization)이다. (더 많은 data를 모을 수도 있지만, 이는 시간과 비용이 들기 때문에 함수의 복잡도를 줄이는 regularization을 선호한다)
 - logistic regression
-    - objective: $min_{w,b}J(w,b)$
-    - L2 regularization(weigth decay): $||w||_{2}^{2}=\sum_{j=1}^{n}w_{j}^{2}=w^{T}w$
-    - L1 regularization: $||w||=\sum_{j=1}^{n}|w_{j}|$
-        - L1 regularization은 w가 sparse(사라진다)된다고 해서 inherent feature selection을 한다. 즉 일부 특징들은 반영되지 않는다. 통상적으로 L2가 L1보다 많이 사용된다.
-        - 왜 w에 대해서만 정규화할까? b는?
+    - objective: $\min_{w,b} J(w,b)$
+    - L2 regularization (weight decay): $||w||_{2}^{2} = \sum_{j=1}^{n} w_{j}^{2} = w^{T} w$
+    - L1 regularization: $||w|| = \sum_{j=1}^{n} |w_{j}|$
+        - L1 regularization은 $w$가 sparse(사라진다)된다고 해서 inherent feature selection을 한다. 즉 일부 특징들은 반영되지 않는다. 통상적으로 L2가 L1보다 많이 사용된다.
+        - 왜 $w$에 대해서만 정규화할까? $b$는?
             
-            다차원의 경우 w는 높은 차원을 갖지만 b는 하나의 숫자이기 때문에 실질적으로 영향을 거의 미치지 않는다. 즉, 대부분의 파라미터는 w이기 때문에 w만 regularization term에 반영한다. 
+            다차원의 경우 $w$는 높은 차원을 갖지만 $b$는 하나의 숫자이기 때문에 실질적으로 영향을 거의 미치지 않는다. 즉, 대부분의 파라미터는 $w$이기 때문에 $w$만 regularization term에 반영한다. 
             
-        - $\lambda$(regularization strength)는 정규화 하이퍼파라미터이다.
-    - cost function with L2 regularization: $J(w,b)=\frac{1}{m}\sum_{i=1}^{m}L(\hat{y}^{(i)}, y^{(i)})+$$\frac{\lambda}{2m}||w||_2^2$
-    - Frobenius norm: $||w^{[l]}||_F^2=\sum_{i=1}^{n^{[l]}}\sum_{j=1}^{n^{[l-1]}}w_{ij}^2$
+        - $\lambda$ (regularization strength)는 정규화 하이퍼파라미터이다.
+    - cost function with L2 regularization: $J(w, b) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} ||w||_2^2$
+    - Frobenius norm: $||w^{[l]}||_F^2 = \sum_{i=1}^{n^{[l]}} \sum_{j=1}^{n^{[l-1]}} w_{ij}^2$
         - 행렬의 모든 원소를 제곱해서 더한 것이다.
         - Frobenius norm은 행렬을 1차원 벡터로 만들어 L2 norm을 구하는 것이다. (행렬의 L2 norm)
     - L2 regularization이 weight decay라고 불리는 이유는?
         - 정규화 추가 후 경사 하강법
-            - $dw^{[l]}=(from 역전파)+\frac{\lambda}{m} w^{[l]}$
-            - $w^{[l]}=w^{[l]}-\alpha dw^{[l]}$
-            - $w^{[l]}=w{[l]}-\alpha [(from 역전파)+\frac{\lambda}{m}w^{[l]}]$
-            - $w^{[l]}=(1-\frac{\alpha \lambda}{m})w^{[l]}-\alpha$$(from 역전파)$
-        - 위의 식에서 w에 1보다 작은 값인 $(1-\frac{\alpha \lambda}{m})$이 곱해지기 때문이다. $\alpha(역전파에서 온 값들)$은 각 iteration마다 gradient descent가 얼마나 큰 step을 밟을지를 결정한다.
+            - $dw^{[l]} = (\text{from 역전파}) + \frac{\lambda}{m} w^{[l]}$
+            - $w^{[l]} = w^{[l]} - \alpha dw^{[l]}$
+            - $w^{[l]} = w^{[l]} - \alpha \left[(\text{from 역전파}) + \frac{\lambda}{m} w^{[l]}\right]$
+            - $w^{[l]} = (1 - \frac{\alpha \lambda}{m}) w^{[l]} - \alpha (\text{from 역전파})$
+        - 위의 식에서 $w$에 1보다 작은 값인 $(1 - \frac{\alpha \lambda}{m})$이 곱해지기 때문이다. $\alpha (\text{역전파에서 온 값들})$은 각 iteration마다 gradient descent가 얼마나 큰 step을 밟을지를 결정한다.
         
-        **➡️ 큰 가중치에 대해 penalty($\lambda$)를 부과하여 가중치의 크기를 줄이는 개념**이다. 따라서 이런 **penalty term을 줄이기 위해 가중치 행렬 W을 줄이게 되는 것이다→weigth decay**
+        **➡️ 큰 가중치에 대해 penalty($\lambda$)를 부과하여 가중치의 크기를 줄이는 개념**이다. 따라서 이런 **penalty term을 줄이기 위해 가중치 행렬 $W$를 줄이게 되는 것이다 → weight decay**
+
+## 왜 정규화는 overfitting을 줄일 수 있을까?
         
 
 ## 왜 정규화는 overfitting을 줄일 수 있을까?
@@ -97,9 +92,8 @@
 2. 만약 은닉층의 활성화 함수($g$)로 tanh를 사용하는 경우, tanh의 중간 부분은 선형에 가깝다. 이때 $\lambda$를 크게 하면 가중치 행렬 W는 0에 가까워지고, $z^{[l]}=W^{[l]}a^{[n-1]}+b{[l]}$도 작아진다. 그 결과 $z^{[l]}$는 활성화 함수 $g$(tanh)의 중간 부분을 통과하므로 선형에 가까울 것이다. **선형 활성화 함수를 사용하면 전체 네트워크도 선형이 되므로 복잡한 함수를 표현하는 것이 어려워진다.** 따라서 overfitting 될 때의 구불구불하고 복잡한 boundary가 그려지지 않기 때문에, overfitting을 방지할 수 있다.  
 
 <aside>
-💡 **공통 아이디어**
+💡 공통 아이디어
 
----
 
 $\lambda$를 크게 해 가중치 행렬 W의 크기를 줄인다. 줄이게 되면…
 
