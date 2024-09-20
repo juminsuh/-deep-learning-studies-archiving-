@@ -4,7 +4,6 @@
 
 ## 01. 파이썬에서의 브로드캐스팅
 
----
 
 ✅ **Broadcasting example**
 
@@ -32,7 +31,6 @@ print(percentage)
 
 ## 02. 파이썬과 넘파이 벡터
 
----
 
 ✅ **브로드캐스팅의 장단점**
 
@@ -58,7 +56,6 @@ print(np.dot(a,a.T)) #(5,5) 행렬
 
 ## 03. 로지스틱 회귀의 비용함수 설명
 
----
 
 ![IMG_5087](https://github.com/user-attachments/assets/c6b8a5ac-b5f3-4c95-8acf-5eb5567bb4c3)
 
@@ -72,13 +69,11 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
 
 ## 04. 신경망 네트워크 개요
 
----
 
 ![IMG_5089](https://github.com/user-attachments/assets/4cee808d-3f4e-4d35-a0a4-76b2bfccbd1a)
 
 ## 05. 신경망 네트워크의 구성 알아보기
 
----
 
 ![Untitled 1](https://github.com/user-attachments/assets/4dd5aef1-43c9-4a4b-815f-915db920201e)
 
@@ -94,7 +89,6 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
 
 ## 06. 신경망 네트워크 출력의 계산
 
----
 
 - 하나의 노드에서 두 개의 연산을 거침. $l$번째 층에서 n번째 노드라고 한다면,
     1. $z_{n}^{[l]}=w_{n}^{[l]T}x+b_{n}^{[l]}$
@@ -109,9 +103,9 @@ P(y=0|x)←x가 주어졌을 때 y가 0일 확률
 
 ## 07. 많은 샘플에 대한 벡터화
 
----
 
 - $a^{[j](i)}$
+
     - $j: j$번째 층
     - $i: i$번째 훈련 데이터
 - 만약 m개의 데이터셋에 대해 네 개의 연산을 반복하고 싶다면, 모든 z와 a에 첨자 $[i]$를 붙이고 for i in range(1,m+1)문을 돌려야 함→**벡터화 해야 함!**
