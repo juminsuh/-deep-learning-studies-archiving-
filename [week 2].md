@@ -143,11 +143,11 @@ Z = [z^{(1)}, z^{(2)}, \ldots, z^{(m)}] = \text{np.dot(np.transpose(W), X)} + b
 $$     
 
         
-        ![IMG_5077](https://github.com/user-attachments/assets/eccb91f2-aab8-44e9-9d26-1d1003181251)
+![IMG_5077](https://github.com/user-attachments/assets/eccb91f2-aab8-44e9-9d26-1d1003181251)
         
-        ✅ $np.dot(np.transpose(w), x)$는 (1,m)크기의 행렬과 상수 b를 더해 오류가 날 것 같지만, 파이썬이 자동적으로 상수 b를 (1,m) 크기의 행렬로 **브로드캐스팅** 해주기 때문에 오류가 발생하지 않음
+✅ $np.dot(np.transpose(w), x)$는 (1,m)크기의 행렬과 상수 b를 더해 오류가 날 것 같지만, 파이썬이 자동적으로 상수 b를 (1,m) 크기의 행렬로 **브로드캐스팅** 해주기 때문에 오류가 발생하지 않음
         
-        - $A=[a^{(1)}, a^{(2)}…a^{(m)}]=\sigma(Z)$
+$A=[a^{(1)}, a^{(2)}…a^{(m)}]=\sigma(Z)$
 
 ## 08. 로지스틱 회귀의 경사 계산을 벡터화 하기
 
