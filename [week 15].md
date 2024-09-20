@@ -126,7 +126,7 @@ $$
 패딩=0 & 스트라이드=1이라고 가정했을 때, 최종 이미지의 크기는 다음과 같다. 
 
 $$
-(n* n * n_c)*(f * f * n_c) = ( n - f + 1 )*(n-f+1)*n_c'
+(n \times n \times n_c) \times (f \times f \times n_c) = (n - f + 1) \times (n - f + 1) \times n_c'
 $$
 
 이때 $n_c$는 채널의 수, $n_c'$는 사용한 필터의 개수이다. 
