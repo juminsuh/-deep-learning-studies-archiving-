@@ -140,7 +140,8 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
 
 $$
 Z = [z^{(1)}, z^{(2)}, \ldots, z^{(m)}] = \text{np.dot(np.transpose(W), X)} + b
-$$        
+$$     
+
         
         ![IMG_5077](https://github.com/user-attachments/assets/eccb91f2-aab8-44e9-9d26-1d1003181251)
         
