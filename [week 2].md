@@ -19,19 +19,18 @@
 
 - 미분의 연쇄법칙(chain rule)이란 합성함수의 도함수에 대한 공식
 - 합성함수의 도함수(derivative)는 합성함수를 구성하는 함수의 미분을 곱함으로써 구할 수 있음(겉미분*속미분)
-- 기본적인 아이디어: 오른쪽에서 왼쪽으로 역전파(backpropagation) 진행→$x$가 바뀜에 따라 $J$는 어떻게 바뀌는가?→$\frac{dJ}{dx}$
+- 기본적인 아이디어: 오른쪽에서 왼쪽으로 역전파(backpropagation) 진행 → $x$가 바뀜에 따라 $J$는 어떻게 바뀌는가? → $\frac{dJ}{dx}$
+
     - $v=a+u→J=3v$
     - $\frac{dJ}{da}=\frac{dJ}{du} \frac{du}{da}$
 - 코드 작성 시 편의를 위해 아래와 같이 도함수를 정의함
     - 최종변수를 Final output var, 미분하려는 변수를 var이라고 정의
     
     $$
-    \frac{d Final output var}{d var}=d var
+    \frac{d \text{Final output var}}{d \text{var}} = d \text{var}
     $$
     
 - 위의 예시로 계산한 결과
-
----
 
 $$
 dv=\frac{dJ}{dv}=3
@@ -139,9 +138,9 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
         - $z^{(i)}=w^{T}x^{(i)}+b$
         - $a^{(i)}=\sigma(z^{(i)})$
     - 하지만 벡터화를 사용하면 다음과 같이 간결하게 계산할 수 있음
-        - $Z=$[$z^{(1)}, z^{(2)}…z^{(m)}$]$=$$np.dot(np.transpose(W),X)+b$
-        
-        ---
+        $$
+        Z = [z^{(1)}, z^{(2)}, \ldots, z^{(m)}] = \text{np.dot(np.transpose(W), X)} + b
+        $$        
         
         ![IMG_5077](https://github.com/user-attachments/assets/eccb91f2-aab8-44e9-9d26-1d1003181251)
         
@@ -159,7 +158,7 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
 
 그러나 경사 하강을 여러 번 한다면, 이때는 어쩔 수 없이 for문을 써야 함
 
----
+
 
 ## **Quiz**
 
@@ -172,7 +171,7 @@ for 문을 두 개 써야 한다는 점. 첫 번째 for문은 m개의 샘플 데
     -벡터화는 벡터화 되지 않은 것보다 빠른 계산이 가능하다. 
     
 
----
+
 
 ## 캐글 필사
 
