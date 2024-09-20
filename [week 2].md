@@ -25,9 +25,9 @@
 - 코드 작성 시 편의를 위해 아래와 같이 도함수를 정의함
     - 최종변수를 Final output var, 미분하려는 변수를 var이라고 정의
     
-        $$
-        \frac{dJ}{da} = \frac{dJ}{du} \cdot \frac{du}{da}
-        $$
+$$
+\frac{dJ}{da} = \frac{dJ}{du} \cdot \frac{du}{da}
+$$
     
 - 위의 예시로 계산한 결과
 
