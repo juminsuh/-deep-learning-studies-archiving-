@@ -29,7 +29,7 @@
     	
     	backpropagation to compute gradient of J^{{t}}
     	W^{[L]}:= W^{[L]} - \alpha dW^{[L]}, b^{[L]}:= b^{[L]} - \alpha db^{[L]}
-	  ```
+	  
     
     
 
