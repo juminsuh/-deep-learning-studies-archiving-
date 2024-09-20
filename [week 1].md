@@ -80,9 +80,9 @@
     
 - Notation
 
-$$
-x\in R^{n_x}, y\in ({0,1}), n_x=64*64*3
-$$
+
+$$x \in \mathbb{R}^{n_x}, \; y \in \{0, 1\}, \; n_x = 64 \times 64 \times 3$$
+
 
 $$
 m-training -examples: ({x^{(1)},y^{(1)}}), ({x^{(2)},y^{(2)}})....({x^{(i)},y^{(i)}})
