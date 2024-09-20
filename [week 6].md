@@ -80,7 +80,6 @@
         
         **➡️ 큰 가중치에 대해 penalty($\lambda$)를 부과하여 가중치의 크기를 줄이는 개념**이다. 따라서 이런 **penalty term을 줄이기 위해 가중치 행렬 $W$를 줄이게 되는 것이다 → weight decay**
 
-## 왜 정규화는 overfitting을 줄일 수 있을까?
         
 
 ## 왜 정규화는 overfitting을 줄일 수 있을까?
